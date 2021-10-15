@@ -1,0 +1,63 @@
+﻿@model UpgradePartyInvites.Models.GuestResponse
+@{ 
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <link href='https://fonts.googleapis.com/css?family=Cinzel Decorative' rel='stylesheet'>
+    <link rel="stylesheet" href="/css/styles.css" />
+    <link rel="stylesheet" href="/lib/bootstrap/dist/css/bootstrap.css" />
+<style>
+button {
+        border: 5px solid black; background-color: antiquewhite;
+        color: black; padding: 10px;
+        font-size: 16px; cursor: pointer;
+    }
+    .submit {
+        border-color: black; color: black;
+    }
+    .submit:hover{
+        background-color:brown; color:antiquewhite;
+    }
+    body {
+        font-family: 'Cinzel Decorative';
+        font-size: 22px;
+    }
+    </style>
+</head>
+<body style="background-color:antiquewhite;padding: 10px;">
+
+<h1 style="text-align:center">RSVP Form For the Surrington Cherub Ball</h1>
+    <form asp-action="RsvpForm" method="post">
+        <div asp-validation-summary="All"></div>
+        <div class="form-group"> 
+            <center><label asp-for="Name">Your name:</label>
+            <input asp-for="Name" class="form-control"/></center>
+        </div>
+        <div class="form-group">
+            <center><label asp-for="Email">Your email:</label>
+            <input asp-for="Email" class="form-control"/></center>
+        </div>
+        <div class="form-group">
+            <center><label asp-for="Phone"> Your phone:</label>
+            <input asp-for="Phone" class="form-control" /></center>
+        </div>
+        <div class="form-group">
+            <center><label>Will you attend?</label>
+            <select asp-for="WillAttend" class="form-control">
+                <option value="">Choose an option</option>
+                <option value="true"> Yes, I'll be there</option>
+                <option value="false">No, I can't come</option>
+            </select></center>
+        </div>
+        <div>
+        <center><button type="submit">Submit RSVP</button></center>
+        </div>
+    </form>
+
+</body>
+</html>

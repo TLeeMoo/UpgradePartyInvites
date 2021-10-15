@@ -1,0 +1,36 @@
+﻿@model UpgradePartyInvites.Models.GuestResponse
+@{ 
+    Layout = null;
+}
+
+<!DOCTYPE html>
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <link href='https://fonts.googleapis.com/css?family=Cinzel Decorative' rel='stylesheet'>
+    <title>Thank You</title>
+    <link rel="stylesheet" href="/lib/bootstrap/dist/css/bootstrap.css" />
+<style>
+    body {
+        font-family: 'Cinzel Decorative';
+        font-size: 22px;
+    }
+</style>
+</head>
+<body style="background-color:brown;">
+    <div>
+        <center>
+            <h1>Thank You, @Model.Name!</h1>
+            @if (Model.WillAttend == true)
+            {
+                @:The Surringtons look forward to seeing you!
+            }
+            else
+            {
+                @: The Surringtons anticipate your presence next time.
+            }
+        </center>
+    </div>
+    <center>Click <a asp-action="ListResponses">here</a> to see who is coming.</center>
+</body>
+</html>

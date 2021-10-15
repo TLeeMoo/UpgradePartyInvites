@@ -1,0 +1,40 @@
+﻿@model IEnumerable<UpgradePartyInvites.Models.GuestResponse>
+@{ 
+    Layout = null;
+}
+<!DOCTYPE html>
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <link href='https://fonts.googleapis.com/css?family=Cinzel Decorative' rel='stylesheet'>
+    <title>Responses</title>
+    <link rel="stylesheet" href="/lib/bootstrap/dist/css/bootstrap.css" />
+<style>
+    th {
+        word-spacing: 30px;
+    }
+    body {
+        font-family: 'Cinzel Decorative';
+        font-size: 22px;
+    }
+</style>
+</head>
+<body style="background-color:pink;">
+    <center><h2>List of Attendees</h2></center>
+    <center><table class="table table-bordered table-striped table-sm">
+        <thead>
+            <tr><th>Name</th><th>Email</th><th>Phone</th></tr>
+        </thead>
+        <tbody>
+            @foreach (UpgradePartyInvites.Models.GuestResponse r in Model)
+            {
+                <tr>
+                    <td>@r.Name</td>
+                    <td>@r.Email</td>
+                    <td>@r.Phone</td>
+                </tr>
+            }
+        </tbody>
+    </table></center>
+</body>
+</html>
